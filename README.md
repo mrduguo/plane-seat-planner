@@ -5,7 +5,7 @@
 
 * selected spring-boot/groovy/spock to maximize the readability with minimal code
 * aim to write readable code without inline comments
-* more unit test could be written for core algorithm 
+* project code coverage: 94.1% (224/ 238), more unit test could be written for core algorithm 
 
 
 ## Documentation
