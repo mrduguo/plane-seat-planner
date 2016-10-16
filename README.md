@@ -50,6 +50,8 @@
 
 
 ### The Algorithm Implementation
+
+src/main/groovy/com/github/mrduguo/planeseatplanner/impl/DefaultPlanner.groovy :
 ```
 
     SeatPlan plan(ScheduledFlight scheduledFlight) {
@@ -118,7 +120,7 @@ Example:
 
 ### Sample Data
 
-`src/test/resources/data/valid/full-capacity-100-percent-satisfaction/input-file.txt`:
+src/test/resources/data/valid/full-capacity-100-percent-satisfaction/input-file.txt :
 
 ```
 4 4
@@ -131,7 +133,7 @@ Example:
 15 16
 ```    
 
-`src/test/resources/data/valid/full-capacity-100-percent-satisfaction/expected-output.txt`:
+src/test/resources/data/valid/full-capacity-100-percent-satisfaction/expected-output.txt :
 
 ```
 1 2 3 8
