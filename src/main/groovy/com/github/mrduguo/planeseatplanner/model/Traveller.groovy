@@ -8,6 +8,7 @@ class Traveller {
     boolean preferWindowSeat
     TravellerGroup travellerGroup
 
+    // data structures used for processing
     boolean seated =false
     boolean gotWindowSeat=false
     boolean removedFromPlane=false

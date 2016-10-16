@@ -7,8 +7,7 @@ class TravellerGroup {
     int groupId
     List<Traveller> travellers = []
 
-    // rest of them are internal processing data structures
-
+    // data structures used for processing
     int groupOwnedSeats=0
     int groupOwnedWindowSeats=0
     int groupDemmandWindowSeats=0

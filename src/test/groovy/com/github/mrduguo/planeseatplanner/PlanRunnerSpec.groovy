@@ -22,14 +22,14 @@ class PlanRunnerSpec extends Specification {
         String seatPlanOutput = planRunner.executePlan(inputFilePath)
 
         then:
-        seatPlanOutput == expectedOutputFile.text
+        expectedOutputFile.text == seatPlanOutput
 
         where:
         sampleDataName                           | _
         'full-capacity-100-percent-satisfaction' | _
         'low-occupy-but-high-window-seat-demand' | _
-        'over-subscribed' | _
-        'large-group' | _
+        'over-subscribed'                        | _
+        'large-group'                            | _
     }
 
 }

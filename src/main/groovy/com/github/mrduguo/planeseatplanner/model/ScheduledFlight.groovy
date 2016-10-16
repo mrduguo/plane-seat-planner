@@ -8,6 +8,9 @@ class ScheduledFlight {
     int rowsInPlane
     List<TravellerGroup> travellerGroups = []
 
+    // data structure used for processing
+    List<List<Traveller>> segments
+
 
     static ScheduledFlight parse(String inputFilePath) {
         ScheduledFlight result

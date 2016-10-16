@@ -32,10 +32,10 @@
 
 
 ### The Algorithm
-1. Normalize group
-1.1 Sort group by size reversely
+1. Break down group into segments
+1.1 Sort group by size reversely but keep natural order for the same size
 1.2 Split large group to fit into row
-2. Remove over subscribed traveller from end of normalized group
+2. Remove over subscribed traveller from end of normalized segments
 2.2 Same size with higher window seat preference first
 3. Allocate seat sequentially
 4. Swap person for natural order
