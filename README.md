@@ -98,7 +98,7 @@ Tested on Windows 7 / CentOS / macOS
 
 ### Build
 
-Linux or macOS:
+Linux / macOS:
 
     ./gradlew
     
