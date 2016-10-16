@@ -70,7 +70,13 @@ Tested on Windows 7 / CentOS / macOS
 
 ### Build
 
+Linux or macOS:
+
     ./gradlew
+    
+Windows:
+    
+    gradlew.bat
     
 It will compile, package and run test at the end. 
 Once it success, you may proceed to run the tool in next step.    

@@ -17,9 +17,6 @@ class SeatPlan {
                 }
                 if (traveller != null) {
                     output.append(traveller.personId)
-                    if(traveller.preferWindowSeat){
-                        output.append('W')
-                    }
                 } else {
                     output.append(0)
                 }
