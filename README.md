@@ -3,9 +3,10 @@
 
 ## Technology Selection
 
-* selected spring-boot/groovy/spock to maximize the readability with minimal code
+* selected spring-boot/spock with groovy CompileStatic to maximize the readability with minimal code
 * aim to write readable code without inline comments
-* project code coverage: 94.1% (224/ 238), more unit test could be written for core algorithm 
+* project code coverage: 94% (226/ 240), more unit test could be written for core algorithm
+* performance wasn't a priority for the prototype implementation
 
 
 ## Documentation
@@ -56,7 +57,7 @@
 ```
 
 
-### The Algorithm Implementation
+### The Implementation
 
 src/main/groovy/com/github/mrduguo/planeseatplanner/impl/DefaultPlanner.groovy :
 ```

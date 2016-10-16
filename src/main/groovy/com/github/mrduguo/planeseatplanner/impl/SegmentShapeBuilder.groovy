@@ -5,15 +5,14 @@ import com.github.mrduguo.planeseatplanner.model.SegmentShape
 import com.github.mrduguo.planeseatplanner.model.Traveller
 import groovy.transform.CompileStatic
 
+import static com.github.mrduguo.planeseatplanner.impl.SeatAllocator.generateEmptyPlaneSeats
+
 @CompileStatic
 class SegmentShapeBuilder {
 
     static void buildSegmentShape(ScheduledFlight scheduledFlight) {
         scheduledFlight.segments = sortSegmentsBySizeReversely(scheduledFlight.segments)
-
-        List<List<Traveller>> travellerSeats = (1..scheduledFlight.rowsInPlane).collect {
-            (1..scheduledFlight.seatsPerRow).collect { null }
-        }.asType(List.class)
+        List<List<Traveller>> travellerSeats = generateEmptyPlaneSeats(scheduledFlight)
 
         List<List<Traveller>> segmentsNeedToBreakDown = []
         scheduledFlight.segments.each { List<Traveller> group ->
