@@ -1,6 +1,13 @@
 # Plane Seat Planner
 
 
+## Technology Selection
+
+* selected spring-boot/groovy/spock to maximize the readability with minimal code
+* aim to write readable code without inline comments
+* more unit test could be written for core algorithm 
+
+
 ## Documentation
 
 ### Folder Structure
@@ -73,13 +80,6 @@ Notes:
 * the output was to produce best result for the requirements and sample data
 * it may not reflex real life or additional situations 
 * satisfaction is calculated based on all travellers include over subscribed
-
-
-### Technology Selection
-
-* selected spring-boot/groovy/spock to maximize the readability with minimal code.
-* aim to write readable code without inline comments
-* more unit test could be written for core algorithm 
 
 ### Input Validation
 
