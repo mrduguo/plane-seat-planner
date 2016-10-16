@@ -1,4 +1,4 @@
-package com.github.mrduguo.planeseatplanner.algorithm
+package com.github.mrduguo.planeseatplanner.impl
 
 import com.github.mrduguo.planeseatplanner.model.ScheduledFlight
 import com.github.mrduguo.planeseatplanner.model.Traveller

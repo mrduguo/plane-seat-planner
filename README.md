@@ -5,28 +5,44 @@
 
 
 ```
-|---------------------------------------------------------
-|- gradle                   # build system support files
-|- build.gradle
-|- gradlew
-|- gradlew.bat
-|---------------------------------------------------------
-|- src
- |- main
-  |- groovy
-   |- com/github/mrduguo/planeseatplanner
-    |- PlannerRunner.groovy # the main class to run application
-    |- model                # data structures
-    |- algorithm            # the implementation of the planner
- |- test
-  |- groovy
-   |- com/github/mrduguo/planeseatplanner
-    |- PlanRunnerSpec.groovy # Spock based integration tests
-    |- model                 # unit tests
-  |- resources
-   |- data
-    |- invalid               # invalid input data for negative tests
-    |- valid                 # use cases to test the algorithm
+├──────────────────────────────────────────────────────────────────────────────────────────────────
+├── gradle                                # build system support files
+├── build.gradle
+├── gradlew
+├── gradlew.bat
+├──────────────────────────────────────────────────────────────────────────────────────────────────
+└── src
+    ├── main/groovy/com/github/mrduguo/planeseatplanner
+    │   ├── Planner                       # the interface to support multiple implementations
+    │   ├── PlannerRunner                 # contain main method to execute the planner 
+    │   ├── impl                          # the default implementation
+    │   │   ├── DefaultPlanner            # class name has suggestions to their responsibilities
+    │   │   ├── OverSubscribeHandler      
+    │   │   ├── SatisfactionCalculator     
+    │   │   ├── SeatAllocator             
+    │   │   ├── SegmentBuilder            
+    │   │   └── SegmentShapeBuilder       
+    │   └── model                         # data structures
+    │       ├── ScheduledFlight           # contain all user input data and intermediate processing data
+    │       ├── SeatPlan                  # the output data structure 
+    │       ├── SegmentShape              # segment is a subset of group who will seat together
+    │       ├── Traveller                 # people who plan to travel with the plane
+    │       └── TravellerGroup            # group of traveller want to seat together
+    └── test
+        ├── groovy/com/github/mrduguo/planeseatplanner
+        │   ├── PlanRunnerSpec            # spock based integration tests
+        │   └── model                     # model unit tests
+        │      └── ScheduledFlightParseSpec
+        └── resources/data
+            ├── invalid
+            │   ├── plane-dimensions-drone
+            │   ├── plane-dimensions-not-number
+            │   └── traveller
+            └── valid
+                ├── full-capacity-100-percent-satisfaction
+                ├── large-group
+                ├── low-occupy-but-high-window-seat-demand
+                └── over-subscribed
     
 ```
 

@@ -12,9 +12,4 @@ class TravellerGroup {
     int groupOwnedWindowSeats=0
     int groupDemmandWindowSeats=0
     List<SegmentShape> groupSeatsShape = []
-
-    static class SegmentShape implements Serializable {
-        int length
-        boolean hasWindowSeat
-    }
 }
