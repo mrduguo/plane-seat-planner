@@ -1,4 +1,6 @@
 # Plane Seat Planner
+
+
 ## Documentation
 
 ### Folder Structure
@@ -47,32 +49,39 @@
 ```
 
 
-### The Algorithm
-1. Break down group into segments
-1.1 Sort group by size reversely but keep natural order for the same size
-1.2 Split large group to fit into row
-2. Remove over subscribed traveller from end of normalized segments
-2.2 Same size with higher window seat preference first
-3. Allocate seat sequentially
-4. Swap person for natural order
-5. Sort rows by minimal person id for natural order
+### The Algorithm Implementation
+```
+
+    SeatPlan plan(ScheduledFlight scheduledFlight) {
+        buildSegmentsFromGroups(scheduledFlight)
+        handleOverSubscribe(scheduledFlight)
+        buildSegmentShape(scheduledFlight)
+
+        def travellerSeats = generateNaturalOrderBasedSeats(scheduledFlight)
+        def satisfaction = calculateSatisfaction(scheduledFlight)
+        new SeatPlan(travellerSeats: travellerSeats, satisfaction: satisfaction)
+    }
+
+```
 
 Notes:
 
-* satisfaction is calculated based on all travellers include over subscribed
 * doesn't apply the traveller weight even distribution across the plane
 * take group seat together as priority than split the group for window seat
 * the output was to produce best result for the requirements and sample data
 * it may not reflex real life or additional situations 
+* satisfaction is calculated based on all travellers include over subscribed
 
 
 ### Technology Selection
+
 * selected spring-boot/groovy/spock to maximize the readability with minimal code.
 * aim to write readable code without inline comments
 * more unit test could be written for core algorithm 
 
 ### Input Validation
-There are basic input validation with enough information for developer to troubleshooting, could add more code to produce better error feedback for business user.
+
+There are basic input validation with enough information for developer to troubleshooting. Could add more code to produce better error feedback for business user.
 
 
 
@@ -95,7 +104,7 @@ Windows:
     gradlew.bat
     
 It will compile, package and run test at the end. 
-Once it success, you may proceed to run the tool in next step.    
+Once it success, you may proceed to run the tool in next step.
 
 ### Run
 
@@ -106,3 +115,28 @@ Syntax:
 Example:
 
     java -jar build/libs/plane-seat-planner-0.0.1-SNAPSHOT.jar src/test/resources/data/valid/full-capacity-100-percent-satisfaction/input-file.txt
+
+### Sample Data
+
+`src/test/resources/data/valid/full-capacity-100-percent-satisfaction/input-file.txt`:
+
+```
+4 4
+1W 2 3
+4 5 6 7
+8
+9 10 11W
+12W
+13 14
+15 16
+```    
+
+`src/test/resources/data/valid/full-capacity-100-percent-satisfaction/expected-output.txt`:
+
+```
+1 2 3 8
+4 5 6 7
+11 9 10 12
+13 14 15 16
+100%
+``` 
